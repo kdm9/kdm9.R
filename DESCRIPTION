@@ -5,7 +5,7 @@ Authors@R:
     person("K.D.", "Murray", , "foss@kdmurray.id.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-2466-1917"))
 Description: Various R utilities by @kdm9, mainly useful for metadata management.
-License: MIT + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.0
