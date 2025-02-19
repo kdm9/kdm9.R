@@ -2,6 +2,7 @@
 
 export("%>%")
 export(ebio_sra_extract)
+export(fqinfo)
 export(kview)
 importFrom(magrittr,"%>%")
 importFrom(rlang,.data)

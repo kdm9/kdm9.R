@@ -11,8 +11,8 @@
 You can install the development version of kdm9.R from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("kdm9/kdm9.R")
+# install.packages("remotes")
+remotes::install_github("kdm9/kdm9.R")
 ```
 
 ## Example
@@ -20,5 +20,20 @@ devtools::install_github("kdm9/kdm9.R")
 
 ``` r
 library(kdm9.R)
+
+
+###### kview()
+# View a dataframe in libreoffice: kview()
+
+mydf = tibble(a=1:10, b=10-1:10)
+kview(mydf)
+
+# can also be used in pipelines, like glimpse():
+mydf = tibble(a=1:10, b=10-1:10) %>%
+    kview()
+
+
+###### ebio_sra_extract()
+
 ```
 
