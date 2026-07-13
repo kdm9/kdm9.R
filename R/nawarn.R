@@ -21,8 +21,8 @@ whona = function(x, y) {
 #' @export
 truey_falsey = function(x) {
     tf = dplyr::case_match(x,
-            c("1", "Y", "P", "Yes", "Present") ~ T,
-            c("0", "N", "A", "No",  "Absent") ~ F
+                           c("1", "Y", "P", "Yes", "Present") ~ T,
+                           c("0", "N", "A", "No",  "Absent") ~ F
     )
     whona(x, tf)
 }
@@ -35,8 +35,8 @@ truey_falsey = function(x) {
 as_numeric_verbose = function(x) {
     # this code will parse german-style comma-as-decimal numbers or
     # english-style dot-as-decimal numbers.
-    x = ifelse(grepl('^\\d+,\\d+$', x, perl=T), sub(',', '.', x, fixed=T), x)
-    x.num = as.numeric(x)
+    x = ifelse(grepl("^\\d+,\\d+$", x, perl=TRUE), sub(",", ".", x, fixed=TRUE), x)
+    x_num = as.numeric(x)
     # Find which values got coerced to NA
-    whona(x, x.num)
+    whona(x, x_num)
 }

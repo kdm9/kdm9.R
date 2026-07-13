@@ -12,7 +12,7 @@ estimate_n_reads = function(fsz, readlen=151, headerlen=64) {
 #' @return A tibble() of read_length, estimate_n_reads, file_size
 #' @importFrom rlang .data
 #' @export
-fqinfo = function(fastqgz, compress_ratio = 5.2173 ) {
+fqinfo = function(fastqgz, compress_ratio = 5.2173) {
     if (is.na(fastqgz)|| fastqgz=="") return(tibble::tibble(read_length=NA, estimated_n_reads=NA, file_size=NA))
     con = gzfile(fastqgz, "rt")
     lines = readLines(con, n=4)
@@ -27,5 +27,3 @@ fqinfo = function(fastqgz, compress_ratio = 5.2173 ) {
         file_size=fsz,
     )
 }
-
-
