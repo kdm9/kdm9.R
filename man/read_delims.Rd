@@ -8,6 +8,8 @@ read_delims(files, ...)
 }
 \arguments{
 \item{files}{A character vector of filenames}
+
+\item{...}{Arguments passed to each file-level readr::read_delim() call}
 }
 \value{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{  The resulting concatenated dataframe
