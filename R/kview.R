@@ -5,7 +5,7 @@
 #' @export
 kview = function(df) {
     fn = paste0(tempfile(), ".tsv")
-    readr::write_tsv(df, fn, na="")
+    write.table(df, fn, sep="\t", row.names=FALSE, na="", quote=TRUE)
     system(sprintf("libreoffice --calc %s", fn))
     return(invisible(df))
 }
