@@ -1,5 +1,4 @@
-
-#' Check for coerced values
+#' Check for coerced values, printing the values that were coerced to NA.
 #'
 #' @param x before conversion
 #' @param y after conversion
@@ -23,17 +22,17 @@ whona = function(x, y) {
 truey_falsey = function(x) {
     tf = dplyr::case_match(x,
             c("1", "Y", "P", "Yes", "Present") ~ T,
-            c("0", "N", "A", "No",  "Absent") ~F
+            c("0", "N", "A", "No",  "Absent") ~ F
     )
     whona(x, tf)
 }
 
-#' An as.numeric that shows coerced values
+#' An as.numeric that shows coerced values verbosely.
 #'
-#' @param x character representing numeric
-#' @return The "after" input
+#' @param x  A character() representing numeric values
+#' @return   The converted values, identical to as.numeric()
 #' @export
-as.numeric.verbose = function(x) {
+as_numeric_verbose = function(x) {
     # this code will parse german-style comma-as-decimal numbers or
     # english-style dot-as-decimal numbers.
     x = ifelse(grepl('^\\d+,\\d+$', x, perl=T), sub(',', '.', x, fixed=T), x)
